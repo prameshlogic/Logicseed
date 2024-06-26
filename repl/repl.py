@@ -32,7 +32,7 @@ while True:
         except SyntaxError:
             ne=exec(user)
     except (EOFError, KeyboardInterrupt):
-        print("\nExiting REPL. Goodbye!")
+        print("\nExiting REPL Goodbye!")
         break
     except Exception as e:
         print(f"Error:{e}")        
