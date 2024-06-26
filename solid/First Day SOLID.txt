@@ -1,0 +1,166 @@
+﻿SOLID Principle
+
+
+SOLID principle is a set of five object oriented design principles that can help us write more maintainable, flexible, and scalable code based on well-designed, cleanly structured classes. Each principle focuses on the different aspects of software design and helps to ensure that your codebase is modular and easy to maintain.
+hb
+g
+
+
+Single Responsibility Principle(SRP)
+
+
+This principle states that a class should have only one reason to change,meaning it should have a single responsibility or job.
+
+
+Before SRP: class d{
+                void play()
+                void sit()
+                }
+
+
+After SRP: class a{
+                void sit() 
+}
+       Class b{
+void play()
+}                         
+
+
+Open/Closed Principle(OCP)
+
+
+This principle suggests that classes should be open for extension but closed for modification. This means that you should be able to add new functionality without altering existing code.
+
+
+Before OCP:
+                Class a{
+                        double radius()
+                         double area(){
+                        return  l*l
+}
+}
+After OCP:
+                class a{
+                double area()}
+class a implements b{
+double radius;
+public double area(){
+return l*l
+}
+}
+
+
+
+
+Liskov Substitution Principle(LSP)
+
+
+The principle emphasizes that objects of derived classes should be able to replace objects of their base classes without affecting the correctness of the program. 
+
+
+Class a{
+        Void ab()
+}
+
+
+Class b extends a{
+        Void ab()
+}
+
+
+Class c extends a{
+This class doesnot override ab()
+}
+
+
+
+
+
+
+Interface Segregation Principle (ISP)
+
+
+The main idea of ISP is that clients should not be forced to depend upon methods that they do not use. Interface belongs to clients not the hierarchies.
+
+
+Before ISP:
+
+
+Interface message{
+Void send()
+Void display()
+}
+
+
+After ISP:
+
+
+Interface sender{
+Void send()
+}
+
+
+Interface displayable{
+Void display()
+}
+
+
+Dependency Inversion Principle(DIP)
+
+
+This is the last principle in the SOLID set. It states that abstraction should not depend upon details .Details should depend upon abstractions. High level modules should not be dependent on low level modules and abstractions should not depend on details. By adhering to DIP, you decouple high-level logic from low-level implementations, leading to systems that are easier to modify, extend, and understand. 
+
+
+
+
+Before DIP:
+
+
+public class User {
+    private Database database;
+    
+    public User() {
+        database = new Database(); 
+    }
+
+
+    public void addUser(String name) {
+        database.save(name);
+    }
+}
+
+
+public class Database {
+    public void save(String name) {
+        
+    }
+}
+
+
+After DIP:
+
+
+public interface Storage {
+    void save(String name);
+}
+
+
+public class User {
+    private Storage storage;
+
+
+    public User(Storage storage) {
+        this.storage = storage;
+    }
+
+
+    public void addUser(String name) {
+        storage.save(name); 
+    }
+}
+
+
+public class Database implements Storage {
+    public void save(String name) {
+    }
+}
