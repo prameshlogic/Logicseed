@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.Home{
+    position: relative;
+    width: 100%;
+    height: 115vh;
+    background: #e6f4f1;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 50px;
+    cursor: pointer;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #019a04;
+}
+
+.detail{
+    margin-left: 8%;
+    margin-top: 10%;
+}
+
+.detail h1{
+    font-size: 50px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+span{
+    color: #008950;
+    
+}
+
+.About{
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.About h1{
+    font-size: 50px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.About p{
+    color: #000;
+    line-height: 22px;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.images{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.images img{
+    height: 70%;
+    position: absolute;
+    left: 50%;
+    bottom: 20;
+    transform: translateX(-50%);
+    transition: bottom 1s, left 1s;
+    border-radius: 5%;
+}
+
+
+.images:hover .mine{
+    left: 45%;
+}
+
+.social{
+    margin-left: 8%;
+    margin-top: 100px;
+}
+
+.social a{
+    font-size: 30px;
+    color: #212121;
+    margin-right: 20px;
+}
+
+.social a:hover{
+    color: #09ae00;
+}
