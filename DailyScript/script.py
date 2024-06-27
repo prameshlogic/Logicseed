@@ -13,7 +13,7 @@ from fpdf import FPDF
 data = pd.read_csv('data.csv')
 
 # Step 2: Process Data
-data.dropna(inplace=True)
+data.dropna()
 data['date'] = pd.to_datetime(data['date'])
 daily_data = data[data['date'] == pd.Timestamp('today').normalize()]
 
@@ -22,10 +22,6 @@ plt.figure(figsize=(10, 6))
 sns.countplot(data=daily_data, x='category')
 plt.title('Daily Report')
 plt.xlabel('Category')
-plt.ylabel('Count')
-plt.savefig('daily_report.png')
-
-# Step 4: Create PDF
 class PDF(FPDF):
     def header(self):
         self.set_font('Arial', 'B', 12)
